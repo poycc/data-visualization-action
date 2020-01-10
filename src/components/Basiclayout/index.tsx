@@ -10,10 +10,10 @@ const BasicLayout: React.FC = () => {
 
   const toggle = () => setCollapsed(!collapsed);
   return (
-    <Layout className='site-layout'>
+    <Layout className="site-layout">
       <Sider
         breakpoint="lg"
-        trigger={!collapsed ? null: ''}
+        trigger={!collapsed ? null : ''}
         collapsedWidth="0"
         collapsible
         collapsed={collapsed}
@@ -21,7 +21,12 @@ const BasicLayout: React.FC = () => {
         theme="light"
       >
         <div className="logo" />
-        <Menu theme="light" mode="inline" defaultSelectedKeys={['4']} className="site-menu">
+        <Menu
+          theme="light"
+          mode="inline"
+          defaultSelectedKeys={['4']}
+          className="site-menu"
+        >
           <Menu.Item key="1">
             <span className="nav-text">nav 1</span>
           </Menu.Item>
@@ -38,11 +43,7 @@ const BasicLayout: React.FC = () => {
       </Sider>
       <Layout>
         <Content>
-          <div
-            className="site-layout-background"
-          >
-            content
-          </div>
+          <div className="site-layout-background">content</div>
         </Content>
       </Layout>
     </Layout>
