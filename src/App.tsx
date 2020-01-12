@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import BasicLayout from './components/Basiclayout';
+import BasicLayout from './components/BasicLayout';
 
 const App: React.FC = () => (
   <BrowserRouter>
