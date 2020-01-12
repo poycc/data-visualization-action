@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { Layout, Menu } from 'antd';
-import routes from 'src/config/route';
+import { Layout } from 'antd';
+import routes, { RoutesArray } from 'src/config/route';
+import NavMenu from '../NavMenu';
 import LazyLoad from '../LazyLoad';
 import 'antd/dist/antd.css';
 import './index.scss';
@@ -12,6 +13,21 @@ const BasicLayout: React.FC = () => {
   const [collapsed, setCollapsed] = useState<boolean>(false);
 
   const toggle = () => setCollapsed(!collapsed);
+
+  const renderRoutes = (data: RoutesArray[] = []): React.ReactNode[] =>
+    data.map((item) => {
+      if (item.children) {
+        return renderRoutes(item.children);
+      }
+      return (
+        <Route
+          key={item.path}
+          path={item.path}
+          exact={item.exact}
+          component={LazyLoad(item.component)}
+        />
+      );
+    });
   return (
     <Layout className="site-layout">
       <Sider
@@ -23,39 +39,13 @@ const BasicLayout: React.FC = () => {
         onCollapse={toggle}
         theme="light"
       >
-        <Menu
-          theme="light"
-          mode="inline"
-          defaultSelectedKeys={['4']}
-          className="site-menu"
-        >
-          <Menu.Item key="1">
-            <span className="nav-text">nav 1</span>
-          </Menu.Item>
-          <Menu.Item key="2">
-            <span className="nav-text">nav 2</span>
-          </Menu.Item>
-          <Menu.Item key="3">
-            <span className="nav-text">nav 3</span>
-          </Menu.Item>
-          <Menu.Item key="4">
-            <span className="nav-text">nav 4</span>
-          </Menu.Item>
-        </Menu>
+        <NavMenu />
       </Sider>
+
       <Layout>
         <Content className="site-layout-content">
           <Router>
-            <Switch>
-              {routes.map((route) => (
-                <Route
-                  key={route.path}
-                  path={route.path}
-                  exact={route.exact}
-                  component={LazyLoad(route.component)}
-                />
-              ))}
-            </Switch>
+            <Switch>{renderRoutes(routes)}</Switch>
           </Router>
         </Content>
       </Layout>
