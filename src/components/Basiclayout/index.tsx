@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Layout, Menu } from 'antd';
+import routes from 'src/config/route';
+import LazyLoad from '../LazyLoad';
 import 'antd/dist/antd.css';
 import './index.scss';
 
@@ -20,7 +23,6 @@ const BasicLayout: React.FC = () => {
         onCollapse={toggle}
         theme="light"
       >
-        <div className="logo" />
         <Menu
           theme="light"
           mode="inline"
@@ -42,8 +44,19 @@ const BasicLayout: React.FC = () => {
         </Menu>
       </Sider>
       <Layout>
-        <Content>
-          <div className="site-layout-background">content</div>
+        <Content className="site-layout-content">
+          <Router>
+            <Switch>
+              {routes.map((route) => (
+                <Route
+                  key={route.path}
+                  path={route.path}
+                  exact={route.exact}
+                  component={LazyLoad(route.component)}
+                />
+              ))}
+            </Switch>
+          </Router>
         </Content>
       </Layout>
     </Layout>
