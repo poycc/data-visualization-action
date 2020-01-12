@@ -11,8 +11,15 @@ const { Content, Sider } = Layout;
 
 const BasicLayout: React.FC = () => {
   const [collapsed, setCollapsed] = useState<boolean>(false);
+  const [breakPoint, setBreakPoint] = useState<boolean>(false);
 
   const toggle = () => setCollapsed(!collapsed);
+
+  const handleTrigger = () => {
+    if (!collapsed && !breakPoint) {
+      return null;
+    }
+  };
 
   const renderRoutes = (data: RoutesArray[] = []): React.ReactNode[] =>
     data.map((item) => {
@@ -32,12 +39,13 @@ const BasicLayout: React.FC = () => {
     <Layout className="site-layout">
       <Sider
         breakpoint="lg"
-        trigger={!collapsed ? null : ''}
+        trigger={handleTrigger()}
         collapsedWidth="0"
         collapsible
         collapsed={collapsed}
         onCollapse={toggle}
         theme="light"
+        onBreakpoint={(broken) => setBreakPoint(broken)}
       >
         <NavMenu />
       </Sider>
