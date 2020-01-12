@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import { Layout } from 'antd';
 import routes, { RoutesArray } from 'src/config/route';
 import NavMenu from '../NavMenu';
@@ -52,9 +52,7 @@ const BasicLayout: React.FC = () => {
 
       <Layout>
         <Content className="site-layout-content">
-          <Router>
-            <Switch>{renderRoutes(routes)}</Switch>
-          </Router>
+          <Switch>{renderRoutes(routes)}</Switch>
         </Content>
       </Layout>
     </Layout>
