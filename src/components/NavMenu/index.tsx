@@ -30,6 +30,7 @@ const NavMenu: React.FC = () => {
   );
   const getMenuItems = (data: RoutesArray[] = []): React.ReactNode[] =>
     data.map((item) => {
+      if (item.show === false) return null;
       if (item.children) {
         return (
           <Menu.SubMenu key={item.path} title={renderTitle(item)}>
