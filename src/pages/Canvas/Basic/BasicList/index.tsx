@@ -32,6 +32,7 @@ const BasicList = () => {
       ctx.arc(430, 40, 5, 0, Math.PI * 2, true);
       ctx.moveTo(475, 40);
       ctx.arc(470, 40, 5, 0, Math.PI * 2, true);
+      ctx.closePath();
       ctx.stroke();
 
       ctx.beginPath();
@@ -59,6 +60,8 @@ const BasicList = () => {
           const anticlockwise = i % 2 !== 0;
 
           ctx.arc(x, y, radius, startAngle, endAngle, anticlockwise);
+
+          ctx.closePath();
 
           if (i > 1) {
             ctx.fill();
