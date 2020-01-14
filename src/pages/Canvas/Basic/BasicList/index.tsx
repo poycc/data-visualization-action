@@ -33,10 +33,24 @@ const BasicList = () => {
       ctx.moveTo(475, 40);
       ctx.arc(470, 40, 5, 0, Math.PI * 2, true);
       ctx.stroke();
+
+      ctx.beginPath();
+      ctx.moveTo(550, 10);
+      ctx.lineTo(650, 10);
+      ctx.lineTo(550, 100);
+      ctx.closePath();
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.moveTo(560, 100);
+      ctx.lineTo(660, 100);
+      ctx.lineTo(660, 10);
+      ctx.closePath();
+      ctx.fill();
     }
   }, []);
 
-  return <canvas width={800} height={800} ref={canvasRef} />;
+  return <canvas width={1200} height={800} ref={canvasRef} />;
 };
 
 export default BasicList;
