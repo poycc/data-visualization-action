@@ -70,6 +70,26 @@ const BasicList = () => {
           }
         }
       }
+
+      ctx.beginPath();
+      ctx.moveTo(880, 110);
+      ctx.fillRect(880, 10, 100, 100);
+      ctx.quadraticCurveTo(930, 20, 980, 10);
+      ctx.closePath();
+      ctx.stroke();
+
+      ctx.beginPath();
+      ctx.strokeRect(1100, 10, 200, 100);
+      ctx.moveTo(1110, 50);
+      ctx.lineTo(1200, 50);
+      ctx.lineTo(1200, 20);
+      ctx.lineTo(1250, 60);
+      ctx.lineTo(1200, 100);
+      ctx.lineTo(1200, 70);
+      ctx.lineTo(1110, 70);
+      ctx.lineTo(1110, 50);
+      ctx.closePath();
+      ctx.stroke();
     }
   }, []);
 
