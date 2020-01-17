@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Row, Col } from 'antd';
 import * as d3 from 'd3';
-import { data } from './data';
+import { data } from 'src/sourceData/numericLinear';
 
 const NumericLinear: React.FC = () => {
   const drawScaleLinear = () => {

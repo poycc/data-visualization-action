@@ -25,7 +25,12 @@ const routes: RoutesArray[] = [
         name: 'basic',
         children: [
           {
-            path: '/canvas/basic',
+            path: '/canvas/basic/numericLinear',
+            name: 'NumericLinear',
+            component: 'Canvas/Basic/NumericLinear',
+          },
+          {
+            path: '/canvas/basic/basicList',
             name: 'Basic List',
             component: 'Canvas/Basic/BasicList',
           },
@@ -42,8 +47,8 @@ const routes: RoutesArray[] = [
         name: 'basic',
         children: [
           {
-            path: '/d3js/basic',
-            name: 'Basic List',
+            path: '/d3js/basic/numericLinear',
+            name: 'NumericLinear',
             component: 'D3js/Basic/NumericLinear',
           },
         ],
