@@ -33,6 +33,23 @@ const routes: RoutesArray[] = [
       },
     ],
   },
+  {
+    path: '/d3js',
+    name: 'd3js',
+    children: [
+      {
+        path: '/d3js/basic',
+        name: 'basic',
+        children: [
+          {
+            path: '/d3js/basic',
+            name: 'Basic List',
+            component: 'D3js/Basic/NumericLinear',
+          },
+        ],
+      },
+    ],
+  },
 ];
 
 export default routes;
