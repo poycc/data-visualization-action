@@ -1,14 +1,16 @@
 import React, { useEffect, useRef } from 'react';
 import { Row, Col } from 'antd';
 import { data } from 'src/sourceData/numericLinear';
+import { setupCanvas } from 'src/utils';
 
 const NumericLinear: React.FC = () => {
   const scaleLinearRef = useRef<HTMLCanvasElement>(null);
   const drawScaleLinear = () => {
     if (!scaleLinearRef.current) return;
-    const canvas = scaleLinearRef.current;
-    const ctx = canvas.getContext('2d');
+    const ctx = setupCanvas(scaleLinearRef.current);
+
     if (!ctx) return;
+
     data.map((item, index) => {
       const height = 22;
       ctx.fillStyle = 'rgb(24, 144, 255)';
