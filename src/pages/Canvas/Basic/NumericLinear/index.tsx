@@ -17,6 +17,8 @@ const NumericLinear: React.FC = () => {
       ctx.fillStyle = 'white';
       ctx.font = '14px Segoe-UI';
       ctx.fillText(`${item.name}:${item.weight}`, 5, 15 + 30 * index);
+
+      return null;
     });
   };
   useEffect(() => {
