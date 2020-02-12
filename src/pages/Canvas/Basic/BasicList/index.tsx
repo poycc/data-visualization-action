@@ -1,15 +1,15 @@
 import React, { useRef, useEffect } from 'react';
+import { setupCanvas } from 'src/utils';
 
 const BasicList: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
     if (!canvasRef.current) return;
-    const canvas: HTMLCanvasElement = canvasRef.current;
-    const ctx = canvas.getContext('2d');
-    if (!ctx) {
-      return;
-    }
+    const ctx = setupCanvas(canvasRef.current);
+
+    if (!ctx) return;
+
     ctx.fillStyle = 'rgb(200,0,0)';
     ctx.fillRect(10, 10, 100, 100);
     ctx.fillStyle = 'rgba(0, 0, 200, 0.5)';
