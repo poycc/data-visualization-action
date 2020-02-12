@@ -17,7 +17,7 @@ const NumericLinear: React.FC = () => {
       ctx.fillRect(0, index * 30, item.weight, height);
 
       ctx.fillStyle = 'white';
-      ctx.font = '14px Segoe-UI';
+      ctx.font = '14px Arial';
       ctx.fillText(`${item.name}:${item.weight}`, 5, 15 + 30 * index);
 
       return null;
