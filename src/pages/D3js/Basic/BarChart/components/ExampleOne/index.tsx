@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
-import { Row, Col } from 'antd';
 import * as d3 from 'd3';
-import { data } from 'src/sourceData/numericLinear';
+import { Col } from 'antd';
+import { data } from 'src/sourceData/bar';
 
-const NumericLinear: React.FC = () => {
+const Index: React.FC = () => {
   const drawScaleLinear = () => {
     const max: number = d3.max(data, (d) => d.weight) || 0;
 
@@ -27,14 +27,11 @@ const NumericLinear: React.FC = () => {
   useEffect(() => {
     drawScaleLinear();
   }, []);
-
   return (
-    <Row>
-      <Col span={6}>
-        <div id="scaleLinear" />
-      </Col>
-    </Row>
+    <Col span={6}>
+      <div id="scaleLinear" />
+    </Col>
   );
 };
 
-export default NumericLinear;
+export default Index;

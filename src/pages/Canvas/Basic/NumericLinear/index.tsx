@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { Row, Col } from 'antd';
-import { data } from 'src/sourceData/numericLinear';
+import { data } from 'src/sourceData/bar';
 import { setupCanvas } from 'src/utils';
 
 const NumericLinear: React.FC = () => {

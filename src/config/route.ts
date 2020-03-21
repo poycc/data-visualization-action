@@ -47,9 +47,19 @@ const routes: RoutesArray[] = [
         name: 'basic',
         children: [
           {
-            path: '/d3js/basic/numericLinear',
-            name: 'NumericLinear',
-            component: 'D3js/Basic/NumericLinear',
+            path: '/d3js/basic/bar',
+            name: 'bar chart',
+            component: 'D3js/Basic/BarChart',
+          },
+          {
+            path: '/d3js/basic/scatter',
+            name: 'scatter chart',
+            component: 'D3js/Basic/ScatterChart',
+          },
+          {
+            path: '/d3js/basic/line',
+            name: 'line chart',
+            component: 'D3js/Basic/LineChart',
           },
         ],
       },
