@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2dd30cc80c7e173ff5171655e0a1dd7f",
+    "revision": "33de7f1e4037b01d42a7b2137e89b979",
     "url": "/poycc/web_data_visualization_action/index.html"
   },
   {
@@ -36,8 +36,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/poycc/web_data_visualization_action/static/js/2.6fdf3946.chunk.js"
   },
   {
-    "revision": "4871c3f43eef970c4815",
-    "url": "/poycc/web_data_visualization_action/static/js/3.6d30ed99.chunk.js"
+    "revision": "b7cf53c335a878c04837",
+    "url": "/poycc/web_data_visualization_action/static/js/3.02d44f63.chunk.js"
   },
   {
     "revision": "7b8f0e55160af8037495",
@@ -56,8 +56,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/poycc/web_data_visualization_action/static/js/7.2a118e3c.chunk.js"
   },
   {
-    "revision": "aa718d04dc01da9b971e",
-    "url": "/poycc/web_data_visualization_action/static/js/8.94f0140b.chunk.js"
+    "revision": "52da525c1499c9f8b1ae",
+    "url": "/poycc/web_data_visualization_action/static/js/8.05a4c18c.chunk.js"
   },
   {
     "revision": "284f4e821f4ecd4565a0",
@@ -68,7 +68,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/poycc/web_data_visualization_action/static/js/main.f7f03adb.chunk.js"
   },
   {
-    "revision": "f7e3670ae4ae566941a2",
-    "url": "/poycc/web_data_visualization_action/static/js/runtime-main.b1607351.js"
+    "revision": "4365ef26dd128504024a",
+    "url": "/poycc/web_data_visualization_action/static/js/runtime-main.9d41d2cf.js"
   }
 ]);
