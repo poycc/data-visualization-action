@@ -28,7 +28,7 @@ const NumericLinear: React.FC = () => {
   }, []);
   return (
     <Row>
-      <Col span={6}>
+      <Col span={12}>
         <canvas width="375px" height="400px" ref={scaleLinearRef} />
       </Col>
     </Row>

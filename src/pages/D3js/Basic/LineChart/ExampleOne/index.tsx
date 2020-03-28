@@ -4,6 +4,7 @@ import * as d3 from 'd3';
 
 const Index: React.FC = () => {
   const draw = () => {
+    const dom = document.getElementById('line-1')?.getBoundingClientRect();
     const dataset = [
       {
         country: 'china',
@@ -44,7 +45,7 @@ const Index: React.FC = () => {
         ],
       },
     ];
-    const width = 500;
+    const width = dom?.width || 0;
     const height = 500;
     const padding = {
       top: 50,
@@ -154,8 +155,8 @@ const Index: React.FC = () => {
   }, []);
 
   return (
-    <Col span={12}>
-      <div id="line-1" />
+    <Col span={24}>
+      <div id="line-1" style={{ width: '100%' }} />
     </Col>
   );
 };
