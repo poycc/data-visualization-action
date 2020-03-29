@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useLocation, useHistory } from 'react-router-dom';
+import { useLocation, useHistory } from 'react-router-dom';
 import { Menu } from 'antd';
 import { createFromIconfontCN } from '@ant-design/icons';
 import routes, { RoutesArray } from 'src/config/route';
