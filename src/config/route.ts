@@ -30,9 +30,9 @@ const routes: RoutesArray[] = [
             component: 'Canvas/Basic/NumericLinear',
           },
           {
-            path: '/canvas/basic/basicList',
-            name: 'Basic List',
-            component: 'Canvas/Basic/BasicList',
+            path: '/canvas/basic/clock',
+            name: 'clock',
+            component: 'Canvas/Basic/Clock',
           },
         ],
       },
