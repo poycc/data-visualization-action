@@ -9,8 +9,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install Dependencies
-        run: npm install
-      - name: Install Dependencies
-        run: npm run build
+        run: yarn
       - name: deploy
-        run: npm run deploy
+        run: yarn run deploy
