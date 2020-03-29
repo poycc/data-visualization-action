@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useHistory } from 'react-router-dom';
 import { Menu } from 'antd';
 import { createFromIconfontCN } from '@ant-design/icons';
 import routes, { RoutesArray } from 'src/config/route';
@@ -11,6 +11,7 @@ const IconFont = createFromIconfontCN({
 
 const NavMenu: React.FC = () => {
   const location = useLocation();
+  const history = useHistory();
 
   const getDefaultOpen = () => {
     const path = location.pathname.split('/');
@@ -20,6 +21,13 @@ const NavMenu: React.FC = () => {
       return [pre].concat([current]).join('/');
     });
     return arr;
+  };
+
+  const handleMenuItemClick = (item: RoutesArray) => {
+    if (item.component) {
+      return history.push(item.path);
+    }
+    return null;
   };
 
   const renderTitle = (t: RoutesArray) => (
@@ -39,15 +47,9 @@ const NavMenu: React.FC = () => {
         );
       }
       return (
-        <Menu.Item key={item.path}>
+        <Menu.Item key={item.path} onClick={() => handleMenuItemClick(item)}>
           {item.icon && <IconFont type={item.icon} />}
-          {item.component ? (
-            <span>
-              <Link to={item.path}>{item.name}</Link>
-            </span>
-          ) : (
-            item.name
-          )}
+          {item.name}
         </Menu.Item>
       );
     });
