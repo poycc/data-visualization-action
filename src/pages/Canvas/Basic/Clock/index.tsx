@@ -11,18 +11,14 @@ const Clock: React.FC = () => {
   countDownRef.current = countDown;
 
   const draw = useCallback(() => {
-    if (!canvasRef.current) return;
-    const canvas = canvasRef.current;
-    const ctx = setupCanvas(canvas);
-
-    if (ctx) {
-      const drawClass = new Draw(canvas, ctx);
+    setupCanvas(canvasRef, (canvas, context) => {
+      const drawClass = new Draw(canvas, context);
       const timer: number = window.setInterval(
         () => drawClass.drawAction(),
         1000,
       );
       setCountDown(timer);
-    }
+    });
   }, []);
 
   useEffect(() => {
