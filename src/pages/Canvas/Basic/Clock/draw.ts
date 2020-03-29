@@ -1,4 +1,3 @@
-/* eslint-disable react/static-property-placement */
 class Draw {
   canvas: HTMLCanvasElement;
 
