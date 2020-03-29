@@ -1,0 +1,16 @@
+name: CI build ang publish
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Dependencies
+        run: npm install
+      - name: Install Dependencies
+        run: npm run build
+      - name: deploy
+        run: npm run deploy
