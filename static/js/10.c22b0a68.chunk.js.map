@@ -1,1 +1,0 @@
-{"version":3,"sources":["pages/Welcome/index.tsx"],"names":["Welcome"],"mappings":"8IAAA,2BAIeA,UAFC,kBAAM","file":"static/js/10.c22b0a68.chunk.js","sourcesContent":["import React from 'react';\n\nconst Welcome = () => <h1>hello world!</h1>;\n\nexport default Welcome;\n"],"sourceRoot":""}
