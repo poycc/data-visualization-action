@@ -25,9 +25,9 @@ const routes: RoutesArray[] = [
         name: 'basic',
         children: [
           {
-            path: '/canvas/basic/numericLinear',
-            name: 'NumericLinear',
-            component: 'Canvas/Basic/NumericLinear',
+            path: '/canvas/basic/SpriteCoordinate',
+            name: 'sprite coordinate',
+            component: 'Canvas/Basic/SpriteCoordinate',
           },
           {
             path: '/canvas/basic/clock',
