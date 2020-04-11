@@ -1,3 +1,4 @@
+import { windowToCanvas } from 'src/utils';
 import spriteSheetImage from './running-sprite-sheet.png';
 
 class Draw {
@@ -5,12 +6,12 @@ class Draw {
 
   context: CanvasRenderingContext2D;
 
-  location: HTMLDivElement | null;
+  location: HTMLDivElement;
 
   constructor(
     canvas: HTMLCanvasElement,
     context: CanvasRenderingContext2D,
-    locationRef: HTMLDivElement | null,
+    locationRef: HTMLDivElement,
   ) {
     this.canvas = canvas;
     this.context = context;
@@ -57,30 +58,20 @@ class Draw {
     this.drawHorizontalLine(y);
   };
 
-  windowToCanvas = (x: number, y: number) => {
-    const bBox = this.canvas.getBoundingClientRect();
-    const scale = this.canvas.width / bBox.width;
-    return {
-      x: x - bBox.left * scale,
-      y: y - bBox.top * scale,
-    };
-  };
-
   drawAction = () => {
     this.drawBackground();
     const image = new Image();
+    this.location.innerText = '当前坐标：（0, 0）';
     image.src = `${spriteSheetImage}`;
     image.onload = () => {
       this.drawSpriteSheet(image);
     };
     this.canvas.onmousemove = (e: MouseEvent) => {
-      const { x, y } = this.windowToCanvas(e.clientX, e.clientY);
+      const { x, y } = windowToCanvas(this.canvas, e.clientX, e.clientY);
       this.drawBackground();
       this.drawSpriteSheet(image);
       this.drawGuideLine(x, y);
-      if (this.location) {
-        this.location.innerText = `当前坐标：（${x}, ${y}）`;
-      }
+      this.location.innerText = `当前坐标：（${x}, ${y}）`;
     };
   };
 }

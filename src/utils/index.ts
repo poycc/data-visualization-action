@@ -1,5 +1,3 @@
-import React from 'react';
-
 export const setupCanvas: (
   ref: React.RefObject<HTMLCanvasElement>,
   callback: (
@@ -33,4 +31,16 @@ export const setupCanvas: (
     ctx.scale(dpr, dpr);
     callback(canvas, ctx, dpr);
   }
+};
+
+export const windowToCanvas: (
+  canvas: HTMLCanvasElement,
+  x: number,
+  y: number,
+) => { x: number; y: number } = (canvas, x, y) => {
+  const bBox = canvas.getBoundingClientRect();
+  return {
+    x: x - bBox.left,
+    y: y - bBox.top,
+  };
 };

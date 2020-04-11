@@ -8,9 +8,12 @@ const SpriteCoordinate: React.FC = () => {
   const locationRef = useRef<HTMLDivElement>(null);
 
   const draw = useCallback(() => {
-    setupCanvas(canvasRef, (canvas, context) =>
-      new Draw(canvas, context, locationRef.current).drawAction(),
-    );
+    setupCanvas(canvasRef, (canvas, context) => {
+      if (locationRef.current) {
+        return new Draw(canvas, context, locationRef.current).drawAction();
+      }
+      return null;
+    });
   }, []);
 
   useEffect(() => {
