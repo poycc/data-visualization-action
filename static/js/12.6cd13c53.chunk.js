@@ -1,2 +1,0 @@
-(this["webpackJsonpdata-visualization-action"]=this["webpackJsonpdata-visualization-action"]||[]).push([[12],{123:function(t,i,a){"use strict";a.r(i);var s=a(87);i.default=function t(i,a){Object(s.a)(this,t),this.canvas=void 0,this.context=void 0,this.canvas=i,this.context=a}}}]);
-//# sourceMappingURL=12.6cd13c53.chunk.js.map

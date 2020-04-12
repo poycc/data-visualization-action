@@ -1,2 +1,0 @@
-(this["webpackJsonpdata-visualization-action"]=this["webpackJsonpdata-visualization-action"]||[]).push([[5],{54:function(t,a,e){"use strict";e.r(a);var n=e(0),i=e.n(n);a.default=function(){var t=Object(n.useRef)(null),a=Object(n.useCallback)((function(){}),[]);return Object(n.useEffect)((function(){a()}),[]),i.a.createElement("div",null,i.a.createElement("canvas",{width:400,height:400,ref:t}))}}}]);
-//# sourceMappingURL=5.73ec6848.chunk.js.map
