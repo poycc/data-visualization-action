@@ -17,28 +17,27 @@ class Draw {
 
   HOUR_HAND_TRUNCATION: number;
 
+  WIDTH: number;
+
+  HEIGHT: number;
+
   constructor(canvas: HTMLCanvasElement, context: CanvasRenderingContext2D) {
     this.canvas = canvas;
     this.context = context;
+    this.WIDTH = this.canvas.getBoundingClientRect().width;
+    this.HEIGHT = this.canvas.getBoundingClientRect().height;
     this.FONT_HEIGHT = 15;
     this.MARGIN = 35;
     this.NUMERAL_SPACING = 20;
-    this.RADIUS = canvas.width / 2 - this.MARGIN;
+    this.RADIUS = this.HEIGHT / 2 - this.MARGIN;
     this.HAND_RADIUS = this.RADIUS + this.NUMERAL_SPACING;
-    this.HAND_TRUNCATION = canvas.width / 25;
-    this.HOUR_HAND_TRUNCATION = canvas.width / 10;
+    this.HAND_TRUNCATION = this.HEIGHT / 25;
+    this.HOUR_HAND_TRUNCATION = this.HEIGHT / 10;
   }
 
   drawCenter = () => {
     this.context.beginPath();
-    this.context.arc(
-      this.canvas.width / 2,
-      this.canvas.height / 2,
-      5,
-      0,
-      Math.PI * 2,
-      true,
-    );
+    this.context.arc(this.WIDTH / 2, this.HEIGHT / 2, 5, 0, Math.PI * 2, true);
     this.context.fill();
   };
 
@@ -51,10 +50,8 @@ class Draw {
       numeralWidth = this.context.measureText(numeral.toString()).width;
       this.context.fillText(
         numeral.toString(),
-        this.canvas.width / 2 +
-          Math.cos(angle) * this.HAND_RADIUS -
-          numeralWidth / 2,
-        this.canvas.height / 2 +
+        this.WIDTH / 2 + Math.cos(angle) * this.HAND_RADIUS - numeralWidth / 2,
+        this.HEIGHT / 2 +
           Math.sin(angle) * this.HAND_RADIUS +
           this.FONT_HEIGHT / 3,
       );
@@ -67,10 +64,10 @@ class Draw {
       ? this.RADIUS - this.HAND_TRUNCATION - this.HOUR_HAND_TRUNCATION
       : this.RADIUS - this.HAND_TRUNCATION;
 
-    this.context.moveTo(this.canvas.width / 2, this.canvas.height / 2);
+    this.context.moveTo(this.WIDTH / 2, this.HEIGHT / 2);
     this.context.lineTo(
-      this.canvas.width / 2 + Math.cos(angle) * handRadius,
-      this.canvas.height / 2 + Math.sin(angle) * handRadius,
+      this.WIDTH / 2 + Math.cos(angle) * handRadius,
+      this.HEIGHT / 2 + Math.sin(angle) * handRadius,
     );
     this.context.stroke();
   };
@@ -88,8 +85,8 @@ class Draw {
   drawCircle = () => {
     this.context.beginPath();
     this.context.arc(
-      this.canvas.width / 2,
-      this.canvas.height / 2,
+      this.WIDTH / 2,
+      this.HEIGHT / 2,
       this.RADIUS,
       0,
       Math.PI * 2,
@@ -99,7 +96,7 @@ class Draw {
   };
 
   drawAction = () => {
-    this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    this.context.clearRect(0, 0, this.WIDTH, this.HEIGHT);
     this.drawCircle();
     this.drawNumerals();
     this.drawCenter();
