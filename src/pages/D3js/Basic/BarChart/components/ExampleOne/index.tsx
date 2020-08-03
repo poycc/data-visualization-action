@@ -7,10 +7,7 @@ const Index: React.FC = () => {
   const drawScaleLinear = () => {
     const max: number = d3.max(data, (d) => d.weight) || 0;
 
-    const scale = d3
-      .scaleLinear()
-      .range([0, 300])
-      .domain([0, max]);
+    const scale = d3.scaleLinear().range([0, 300]).domain([0, max]);
 
     const container = d3.select('#scaleLinear');
     container

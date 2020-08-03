@@ -56,10 +56,10 @@ const NavMenu: React.FC = () => {
   return (
     <Menu
       theme="light"
-      mode="inline"
+      mode="horizontal"
       className="site-menu"
-      defaultSelectedKeys={[location.pathname]}
-      defaultOpenKeys={getDefaultOpen()}
+      // defaultSelectedKeys={[location.pathname]}
+      // defaultOpenKeys={getDefaultOpen()}
     >
       {getMenuItems(routes)}
     </Menu>

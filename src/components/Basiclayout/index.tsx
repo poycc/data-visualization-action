@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { Layout } from 'antd';
 import routes, { RoutesArray } from 'src/config/route';
@@ -7,20 +7,9 @@ import LazyLoad from '../LazyLoad';
 import 'antd/dist/antd.css';
 import './index.scss';
 
-const { Content, Sider } = Layout;
+const { Content, Header } = Layout;
 
 const BasicLayout: React.FC = () => {
-  const [collapsed, setCollapsed] = useState<boolean>(false);
-  const [breakPoint, setBreakPoint] = useState<boolean>(false);
-
-  const toggle = () => setCollapsed(!collapsed);
-
-  const handleTrigger = () => {
-    if (!collapsed && !breakPoint) {
-      return null;
-    }
-  };
-
   const renderRoutes = (data: RoutesArray[] = []): React.ReactNode[] =>
     data.map((item) => {
       if (item.children) {
@@ -37,18 +26,9 @@ const BasicLayout: React.FC = () => {
     });
   return (
     <Layout className="site-layout">
-      <Sider
-        breakpoint="lg"
-        trigger={handleTrigger()}
-        collapsedWidth="0"
-        collapsible
-        collapsed={collapsed}
-        onCollapse={toggle}
-        theme="light"
-        onBreakpoint={(broken) => setBreakPoint(broken)}
-      >
+      <Header className="site-header">
         <NavMenu />
-      </Sider>
+      </Header>
 
       <Layout>
         <Content className="site-layout-content">

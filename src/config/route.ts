@@ -17,6 +17,28 @@ const routes: RoutesArray[] = [
     component: 'Welcome',
   },
   {
+    path: '/threeJs',
+    name: 'ThreeJs',
+    children: [
+      {
+        path: '/threeJs/basic',
+        name: 'basic',
+        children: [
+          {
+            path: '/threeJs/basic/BasicSkeleton',
+            name: 'BasicSkeleton',
+            component: 'ThreeJs/Basic/BasicSkeleton',
+          },
+          {
+            path: '/threeJs/basic/DrawingLines',
+            name: 'DrawingLines',
+            component: 'ThreeJs/Basic/DrawingLines',
+          },
+        ],
+      },
+    ],
+  },
+  {
     path: '/canvas',
     name: 'Canvas',
     children: [

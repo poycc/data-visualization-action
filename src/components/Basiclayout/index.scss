@@ -1,16 +1,13 @@
 .site-layout {
 
-  .site-menu {
-    min-height: 100vh;
-  }
-
-  .site-layout-sub-header-background {
+  .site-header {
     background: #fff;
   }
 
   .site-layout-content {
-    padding: 20px;
-    min-height: 100vh;
+    position: relative;
+    margin-top: 10px;
+    min-height: calc(100vh - 76px);
     background: #fff;
   }
 }
